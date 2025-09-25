@@ -20,7 +20,7 @@ This project solves the problem by:
   
 ## Dataset
 
-Source: [Credit Card Fraud Detection Dataset (Kaggle)]()
+Source: [Credit Card Fraud Detection Dataset (Kaggle)](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
 
 Description:
 
@@ -88,7 +88,6 @@ Workflow:
 
 7. Apply SHAP or LIME to interpret which SQL-engineered features contribute most to fraud prediction
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Production-Ready Integration
 
 * Automated SQL feature extraction (daily or real-time)
