@@ -20,7 +20,7 @@ This project solves the problem by:
   
 ## Dataset
 
-Source: [Credit Card Fraud Detection Dataset (Kaggle)](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
+Source: [UCI Online Retail II](https://archive.ics.uci.edu/ml/datasets/online+retail+ii)
 
 Description:
 
