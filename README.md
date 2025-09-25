@@ -2,30 +2,22 @@
 
 ## Project Overview
 
-This project builds a fraud detection system leveraging SQL for feature engineering and Python-based ML for prediction. The goal is to detect potentially fraudulent transactions in financial datasets by integrating database-level feature aggregation with advanced ML models.
-
-Recruiters and hiring managers will immediately see that this project demonstrates:
-
-Advanced SQL feature engineering for real-world transactional data.
-
-ML modeling and evaluation for imbalanced classification problems.
-
-Integration of SQL with Python workflows to create a production-ready pipeline.
-
-Explainable AI (XAI) for actionable insights.
+This project builds a fraud detection system by combining SQL-based feature engineering with Python machine learning models. The goal is to identify potentially fraudulent transactions in financial datasets by integrating database-level aggregation with advanced ML techniques.
 
 ## Problem Statement
 
-Financial institutions need robust systems to detect fraudulent transactions to minimize loss and protect users. Traditional rule-based methods often fail to capture complex patterns. This project addresses this by:
+Financial institutions require robust fraud detection systems to minimize losses and protect users. Traditional rule-based methods often fail to detect complex fraud patterns.
 
-Aggregating transaction data using SQL queries.
+This project solves the problem by:
 
-Engineering features capturing transaction velocity, user behavior, and anomaly patterns.
+* Aggregating transactional data using SQL queries.
 
-Applying supervised ML models to predict fraud probability.
+* Engineering features capturing transaction velocity, user behavior, and anomaly patterns.
 
-Providing interpretable insights using SHAP values.
+* Applying supervised ML models to predict fraud probability.
 
+* Providing interpretable insights using SHAP values.
+  
 ## Dataset
 
 Source: [Credit Card Fraud Detection Dataset (Kaggle)]()
@@ -50,8 +42,9 @@ The project demonstrates advanced SQL skills by creating multiple views for feat
 
 1. User-level aggregation:
    * Total transactions, total and average amounts per user.
+   * Total and average transaction amounts per user
 
-3. Rolling-window features:
+2. Rolling-window features:
    * Transactions in last 24 hours, 7 days, 30 days.
 
    * Rolling average transaction amount over last 5 transactions.
@@ -61,6 +54,13 @@ The project demonstrates advanced SQL skills by creating multiple views for feat
    * Transactions per hour.
 
    * Patterns across merchants or multi-account activity.
+
+4. Real-Time / Streaming Features
+   * Python scheduler updates rolling features in real-time for operational scoring.
+
+5. Behavioral Feature Engineering
+   * User transaction sequences: detect unusual order of merchant categories
+   * Feature interactions: combine velocity, merchant category, and location for advanced patterns
   
 ## Machine Learning Pipeline
 
@@ -68,35 +68,33 @@ Models Used: Random Forest (with class balancing for imbalanced data)
 
 Workflow:
 
-Pull feature data from SQL using pandas.read_sql.
+1. Pull feature data from SQL using pandas.read_sql
 
-Merge and clean feature tables.
+2. Merge and clean feature tables
 
-Standardize numeric features.
+3. Standardize numeric features
 
-Train/test split (stratified for fraud labels).
+4. Train/test split (stratified by fraud labels)
 
-Train model, tune hyperparameters.
+5. Train model and tune hyperparameters
 
-Evaluate using metrics:
+6. Evaluate using metrics:
 
-Precision, Recall, F1-score (focus on recall for fraud)
+   * Precision, Recall, F1-score (focus on Recall for fraud)
 
-ROC-AUC score
+   * ROC-AUC score
 
-Confusion matrix
+   * Confusion matrix
 
-SHAP or LIME used to identify which SQL-engineered features contribute most to fraud prediction.
+7. Apply SHAP or LIME to interpret which SQL-engineered features contribute most to fraud prediction
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Production-Ready Integration
 
-This project goes beyond a standard ML pipeline by demonstrating:
+* Automated SQL feature extraction (daily or real-time)
 
-Automated SQL feature extraction (daily or real-time).
+* Writing predictions back to SQL tables for operational use
 
-Writing predictions back to SQL tables for operational use.
+* Triggering alerts for high-risk transactions
 
-Triggering alerts for high-risk transactions.
-
-Visualization dashboards for monitoring fraud patterns.
+* Visualization dashboards for monitoring fraud patterns
