@@ -20,8 +20,7 @@ This project solves the problem by:
   
 ## Dataset
 
-Source: [UCI Online Retail II](https://archive.ics.uci.edu/ml/datasets/online+retail+ii)
-
+Source: [Kaggle](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
 Description:
 
 transaction_id: Unique identifier
